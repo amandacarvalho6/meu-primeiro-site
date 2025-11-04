@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunidades e Cidades Sustentáveis</title>
+
+    <!-- Fonte moderna -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* =============================
+           ESTILOS GERAIS DO SITE
+        ============================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Paleta de cores chamativa */
+        :root {
+            --verde: #27ae60;
+            --amarelo: #f1c40f;
+            --azul: #00bcd4;
+            --laranja: #e67e22;
+            --roxo: #9b59b6;
+            --branco: #ffffff;
+            --cinza: #f5f5f5;
+            --preto: #1a1a1a;
+        }
+
+        body {
+            background-color: var(--cinza);
+            color: var(--preto);
+            scroll-behavior: smooth;
+        }
+
+        /* =============================
+           CABEÇALHO
+        ============================== */
+        header {
+            background: linear-gradient(90deg, var(--verde), var(--azul), var(--roxo));
+            color: var(--branco);
+            text-align: center;
+            padding: 25px 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+        }
+
+        nav ul {
+            list-style: none;
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        nav a {
+            color: var(--branco);
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background-color: var(--amarelo);
+            color: var(--preto);
+        }
+
+        /* =============================
+           SEÇÕES GERAIS
+        ============================== */
+        section {
+            padding: 70px 10%;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            color: var(--preto);
+            margin-bottom: 20px;
+        }
+
+        section p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* =============================
+           SEÇÃO SOBRE
+        ============================== */
+        #sobre {
+            background: linear-gradient(135deg, #d4f8d4, #b2ebf2);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            border-top: 8px solid var(--verde);
+        }
+
+        #sobre img {
+            width: 400px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
+        }
+
+        #sobre img:hover {
+            transform: scale(1.05);
+        }
+
+        #sobre .texto {
+            max-width: 500px;
+            text-align: left;
+        }
+
+        /* =============================
+           SEÇÃO OBJETIVOS
+        ============================== */
+        #objetivos {
+            background: linear-gradient(180deg, var(--azul), var(--verde));
+            color: var(--branco);
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: var(--branco);
+            color: var(--preto);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            background: var(--amarelo);
+        }
+
+        .card h3 {
+            color: var(--verde);
+            margin-bottom: 10px;
+        }
+
+        /* =============================
+           SEÇÃO VÍDEO DO YOUTUBE
+        ============================== */
+        #video {
+            background: linear-gradient(135deg, var(--laranja), var(--amarelo));
+            color: var(--preto);
+        }
+
+        iframe {
+            width: 100%;
+            max-width: 700px;
+            height: 400px;
+            border-radius: 15px;
+            border: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        /* =============================
+           SEÇÃO AÇÕES
+        ============================== */
+        #acoes {
+            background: linear-gradient(135deg, #fce38a, #f38181);
+        }
+
+        .lista-acoes {
+            list-style: none;
+            margin-top: 30px;
+            text-align: left;
+            display: inline-block;
+        }
+
+        .lista-acoes li {
+            background: var(--branco);
+            margin: 12px 0;
+            padding: 12px 20px;
+            border-left: 6px solid var(--roxo);
+            border-radius: 8px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .lista-acoes li:hover {
+            transform: translateX(10px);
+            background-color: var(--verde);
+            color: var(--branco);
+        }
+
+        /* =============================
+           SEÇÃO CONTATO
+        ============================== */
+        #contato {
+            background: linear-gradient(135deg, var(--roxo), var(--azul));
+            color: var(--branco);
+        }
+
+        .form-contato {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 500px;
+            margin: 40px auto 0;
+        }
+
+        .form-contato input,
+        .form-contato textarea {
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .form-contato button {
+            background: var(--amarelo);
+            color: var(--preto);
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .form-contato button:hover {
+            background: var(--branco);
+            color: var(--roxo);
+        }
+
+        /* =============================
+           RODAPÉ
+        ============================== */
+        footer {
+            background-color: var(--preto);
+            color: var(--branco);
+            text-align: center;
+            padding: 15px;
+            font-size: 0.9rem;
+        }
+
+        /* =============================
+           ANIMAÇÕES SUAVES
+        ============================== */
+        @keyframes aparecer {
+            from {opacity: 0; transform: translateY(30px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+
+        section {
+            animation: aparecer 1s ease forwards;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- =============================
+         CABEÇALHO E MENU
+    ============================== -->
+    <header>
+        <h1>🌎 Comunidades e Cidades Sustentáveis</h1>
+        <nav>
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#objetivos">Objetivos</a></li>
+                <li><a href="#video">Vídeo</a></li>
+                <li><a href="#acoes">Ações</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- =============================
+         SEÇÃO SOBRE
+    ============================== -->
+    <section id="sobre">
+        <div class="texto">
+            <h2>O que são Cidades Sustentáveis?</h2>
+            <p>
+                Cidades sustentáveis são espaços planejados para garantir qualidade de vida,
+                equilíbrio ambiental e inclusão social. Elas incentivam o uso de transportes
+                ecológicos, energia limpa e uma convivência harmoniosa com a natureza.
+            </p>
+            <p>
+                O objetivo é construir comunidades onde todos tenham acesso a moradia digna,
+                saneamento, mobilidade, áreas verdes e oportunidades iguais.
+            </p>
+        </div>
+    
+        <img src="Cidade Sustentável - Copia (2).jpg" alt="Cidade Sustentável">
+    </section>
+
+    <!-- =============================
+         SEÇÃO OBJETIVOS
+    ============================== -->
+    <section id="objetivos">
+        <h2>Objetivos do Desenvolvimento Sustentável (ODS 11)</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>🏘️ Comunidades Inclusivas</h3>
+                <p>Promover cidades seguras e acessíveis para todos.</p>
+            </div>
+            <div class="card">
+                <h3>🚲 Mobilidade Sustentável</h3>
+                <p>Priorizar ciclovias, transporte público e veículos elétricos.</p>
+            </div>
+            <div class="card">
+                <h3>🌳 Áreas Verdes</h3>
+                <p>Ampliar parques e preservar florestas urbanas.</p>
+            </div>
+            <div class="card">
+                <h3>⚡ Energia Limpa</h3>
+                <p>Estimular o uso de energia solar e eólica.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================
+         SEÇÃO VÍDEO EXPLICATIVO
+    ============================== -->
+    <section id="video">
+        <h2>🎥 Vídeo Explicativo sobre Cidades Sustentáveis</h2>
+        <p>Assista ao vídeo abaixo para entender melhor como podemos transformar nossas comunidades em lugares mais verdes e inclusivos:</p>
+
+        <!-- 🔗 AQUI ESTÁ O LINK DO YOUTUBE -->
+<iframe width="560" height="315" 
+        src="https://www.youtube.com/embed/5phZdLrditc" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen>
+</iframe>
+
+    </section>
+
+    <!-- =============================
+         SEÇÃO AÇÕES
+    ============================== -->
+    <section id="acoes">
+        <h2>🌱 Ações Sustentáveis nas Comunidades</h2>
+        <ul class="lista-acoes">
+            <li>♻️ Coleta seletiva e reciclagem de resíduos.</li>
+            <li>🚶‍♀️ Incentivo ao transporte coletivo e caminhadas.</li>
+            <li>🌞 Uso de painéis solares e energia renovável.</li>
+            <li>💧 Reaproveitamento da água da chuva.</li>
+            <li>🏫 Educação ambiental em escolas e comunidades.</li>
+        </ul>
+    </section>
+
+    <!-- =============================
+         SEÇÃO CONTATO
+    ============================== -->
+    <section id="contato">
+        <h2>Entre em Contato 💬</h2>
+        <form class="form-contato">
+            <input type="text" placeholder="Seu nome" required>
+            <input type="email" placeholder="Seu e-mail" required>
+            <textarea placeholder="Sua mensagem" rows="5" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <!-- =============================
+         RODAPÉ
+    ============================== -->
+    <footer>
+        <p>2025 Comunidades Sustentáveis | Desenvolvido com 💚 e consciência ambiental</p>
+    </footer>
+
+</body>
+</html>
+
+
